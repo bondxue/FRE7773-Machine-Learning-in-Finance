@@ -14,8 +14,13 @@ machine learning homeworks
 #### Model  
 `Capital Asset Pricing Model (CAPM)`
    + Calculate excess return for each stocks and SP index.
-   + Conduct **linear regression** using `Scikit-Learn` and `Statsmodels` for each stock, using its excess return as the *y-variable* and the SP index excess return as the *x-variable*. 
+   + Conduct **linear regression** using `Scikit-Learn` and `Statsmodels` for each stock, using its excess return as the *y-variable* and the SP index excess return as the *x-variable*. Linear regression results using `Statsmodels` are shown as follows:
+
+   <img src="https://github.com/bondxue/FRE7773-Machine-Learning-in-Finance/blob/master/HW01-LinearRegression/images/LinearReg.PNG" width="500">
+   
    + Test whether `CAPM` is a good model for explaning daily stock return variance.
+    
+
     
 #### Results
 * **Compare the two data frames and assert that they return the same values for $\alpha$ and $\beta$.**
@@ -41,8 +46,10 @@ compare three models, **OLS**, **Bayes** and **SGD** in predicting quality in te
 2. Display a description of the dataset
 3. Split the dataset, keeping 1000 observations for out-of-sample testing
 4. Fit **OLS**, **Bayes** and **SGD** on the training sample and display the weights
+<img src="https://github.com/bondxue/FRE7773-Machine-Learning-in-Finance/blob/master/HW02-BayesianSGDRegression/images/weights.png" width="700">
 5. For each model compute and print out the `RMSE` and `EVAR (explained variance score)` in (train) and out of (test) sample
-6. Plot the `learning curves` for each model 
+6. Plot the `learning curves` for each model
+<img src="https://github.com/bondxue/FRE7773-Machine-Learning-in-Finance/blob/master/HW02-BayesianSGDRegression/images/learning-curve.png" width="700">
 7. Based on the evidence (`learning curves`, `RMSE`, `EVAR`) discuss which model is the best
 
 #### Results
@@ -91,9 +98,29 @@ In the showing case, we could see that **linear SVM** is better performed than *
 
 * Display the summary of the best selected model based on the AIC criterion.
 * Plot the original returns series and the predictions of the best selected model using the model's plot_predict method.
+<img src="https://github.com/bondxue/FRE7773-Machine-Learning-in-Finance/blob/master/HW04-TimeSeries/images/return.PNG" width="700">
 
 * Run the *Jarque-Bera normality test* on the residuals of the best selected **ARIMA** model, and produce the *qq plot* of the residuals.
+```Python
+Jarque-Bera Normality Test on AR Residuals
+statistic: 1.5098564497740838
+p-value: 0.4700443510061998
+skew: -0.10713348436248081
+kurtosis: 3.0895159804068806
+```
+
+<img src="https://github.com/bondxue/FRE7773-Machine-Learning-in-Finance/blob/master/HW04-TimeSeries/images/qq_arima.PNG" width="400">
+
 * Repeat the *Jarque-Bera test* and the *qq plot* using the residuals of the **white noise model ARMA(0, 0)**.
+```Python
+Jarque-Bera Normality Test on AR Residuals
+statistic: 0.6653429629453448
+p-value: 0.717005705127056
+skew: 0.02162822835081098
+kurtosis: 3.1479565058733145
+```
+<img src="https://github.com/bondxue/FRE7773-Machine-Learning-in-Finance/blob/master/HW04-TimeSeries/images/qq_arma.PNG" width="400">
+
 * Compare the two and comment on whether they are really different.
 
 
