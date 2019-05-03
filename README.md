@@ -161,6 +161,8 @@ kurtosis: 3.1479565058733145
 4-day return correlation: -0.26175980947060246
 ```
 4. Plot the actual and predicted returns in the out-of-sample part. Here is 3-day return plot result:
+<img src="https://github.com/bondxue/FRE7773-Machine-Learning-in-Finance/blob/master/HW05-LSTM/images/3-day%20return.PNG" width="800">
+
 
 #### Summary
 Based on *RMSE* and *correlation* between acutal and predicted n-day returns  and plots of out-of-sample parts, we can conclude that LSTM model does not have good performance in predicting daily returns. The potential reseaons are:
