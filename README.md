@@ -134,5 +134,36 @@ kurtosis: 3.1479565058733145
 
 
 ---------------------------
-### homework 5:
+### homework 5: daily return prediction using LSTM 
 
+#### Dataset
+`stock-treasury-2004_2006.csv`- contains the following:
+* `TREAS_3M`: the yield of the 3-month treasury note in percent (i.e 2.1 means 2.1%)
+* `Adjusted close price` of ten major stocks: GM, F, UTX, CAT, MRK, PFE, IBM, MSFT, C, XOM
+* `SP`: The S&P 500 equity index level at the close of the trading day
+
+#### Model
+**RNN** with two **LSTM** cells
+
+#### Precedure
+1. Build an RNN with two LSTM cells and train it on the first 607 sequences. Use the remaining returns for out-of-sample testing.
+2. Compute the out-of-sample actual and predicted 2-day, 3-day, ..., N-day return, by summing 1-day forward returns up to this horizon.
+3. Calculate and report the RMSE and the correlation between actual and predicted 1-day, 2-day, ..., N-day returns.
+```Python
+1-day return RMSE: 79.28
+2-day return RMSE: 114.62
+3-day return RMSE: 144.13
+4-day return RMSE: 173.44
+
+1-day return correlation: -0.16756074223160694
+2-day return correlation: -0.13458050383693185
+3-day return correlation: -0.23897153449425
+4-day return correlation: -0.26175980947060246
+```
+4. Plot the actual and predicted returns in the out-of-sample part. Here is 3-day return plot result:
+
+#### Summary
+Based on *RMSE* and *correlation* between acutal and predicted n-day returns  and plots of out-of-sample parts, we can conclude that LSTM model does not have good performance in predicting daily returns. The potential reseaons are:
+1. Daily return has **martingale** property, we cannot predict daily returns just based on the previous daily return data. 
+2. If we want to improve the prediction performance, instead of using just previous daily return data, more features needed to be considered, such as `volume`.
+3. Even with enough data and good feature selection, we still cannot expect much better performace. As we could see from the real daily return plots, daily return does not have obvious trends and it is extremly unstable with sudden nonlinear changes. However, LSTM only based on the previous information, for which I doubt it could capture the super nonlinear trends. 
