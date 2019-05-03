@@ -23,12 +23,12 @@ machine learning homeworks
 
     
 #### Results
-* **Compare the two data frames and assert that they return the same values for $\alpha$ and $\beta$.**
-  + Yes, the two data frames return the same values for $\alpha$ and $\beta$.
+* **Compare the two data frames and assert that they return the same values for alpha and beta.**
+  + Yes, the two data frames return the same values for alpha and beta.
 * **Based on the p-values, can we reject the null hypotheses alpha=0 or beta=0?**
-  + The most common significance level to reject the null hypothesis is 0.05. We can see that for  $\alpha$, p-values are all greater than 0.05. Thus we hold the null hypotheses  that $\alpha = 0$. For $\beta$, p-values are all less than 0.05, thus we reject the null hypotheses that $\beta = 0$.
+  + The most common significance level to reject the null hypothesis is 0.05. We can see that for alpha, p-values are all greater than 0.05. Thus we hold the null hypotheses  that alpha = 0. For beta, p-values are all less than 0.05, thus we reject the null hypotheses that beta = 0.
 * **Is CAPM a good model for explaning daily stock return variance?**
-  +  CAPM uses a $\beta$ to compensate investors for the risk they take. A high $\beta$ means that the asset is greatly affected by macro-economic changes, so the variance will be high. A low $\beta$ means that the asset is not heavily affected by market changes, so the expected return can also be lower. However, it is a too simple model that only uses one $\beta$ to explain the stock return. To fully explain stock return variance, I think more $\beta's$ need to be added into the model. 
+  +  CAPM uses a beta to compensate investors for the risk they take. A high beta means that the asset is greatly affected by macro-economic changes, so the variance will be high. A low beta means that the asset is not heavily affected by market changes, so the expected return can also be lower. However, it is a too simple model that only uses one beta to explain the stock return. To fully explain stock return variance, I think more beta's need to be added into the model. 
   + We could check R-squared values and find that all are less than 0.5. It shows that CAPM model is not good fit for our daily stock return data.
     
 ---------------------------
