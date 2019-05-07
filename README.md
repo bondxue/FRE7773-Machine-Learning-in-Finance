@@ -1,9 +1,9 @@
 # FRE7773-Machine-Learning-in-Finance
-machine learning homeworks 
+This course covers the theory and practice of Machine Learning and its fundamental applications in the field of Financial Engineering. **Supervised**, **unsupervised**, and **reinforcement learning** paradigms are discussed.
 
 ---------------------------
 
-### homework 1: daily stock return analysis using CAPM model
+## homework 1: daily stock return analysis using CAPM model
 
 #### Dataset
 `stock-treasury-2004_2006.csv`- For each trading day in the study period the dateset contains:  
@@ -33,7 +33,7 @@ machine learning homeworks
     
 ---------------------------
 
-### homework 2: wine quality analysis using OLS, bayes, and SGD
+## homework 2: wine quality analysis using OLS, bayes, and SGD
 
 #### Dataset
 `winequality-white.csv` -It contains 4898 observations of 11 numerical white wine attributes. It also contains a quality score that ranges from 0 to 10.
@@ -59,7 +59,7 @@ Based on learning curves, RMSE and EVAR, I think **SGD** is the best model in th
 
 ---------------------------
 
-### homework 3: Pima Indians Diabetes forecast using linear-SVM and rbf-SVM
+## homework 3: Pima Indians Diabetes forecast using linear-SVM and rbf-SVM
 
 #### Dataset
 `pima-indians-diabetes.csv` -  forecast the occurence of diabetes from eight numerical features. Metadata for the features are found in the `README.txt` file.
@@ -83,7 +83,7 @@ In the showing case, we could see that **linear SVM** is better performed than *
 
 ---------------------------
 
-### homework 4: daily return analysis using ARIMA and ARMA(0, 0) 
+## homework 4: daily return analysis using ARIMA and ARMA(0, 0) 
 #### Dataset
 `stock-treasury-2004_2006.csv`- contains the following:
 * `TREAS_3M`: the yield of the 3-month treasury note in percent (i.e 2.1 means 2.1%)
@@ -134,7 +134,7 @@ kurtosis: 3.1479565058733145
 
 
 ---------------------------
-### homework 5: daily return prediction using LSTM 
+## homework 5: daily return prediction using LSTM 
 
 #### Dataset
 `stock-treasury-2004_2006.csv`- contains the following:
