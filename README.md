@@ -143,7 +143,7 @@ kurtosis: 3.1479565058733145
 Propose an optimal classification model that forecasts credit risk (good/bad credit outcome) given the above attributes.
 
 #### ROC curves comparsion 
-
+<img src="https://github.com/bondxue/FRE7773-Machine-Learning-in-Finance/blob/master/MidTerm-CreditRiskProject/images/roc.PNG" width="800">
 
 + Compare AUC for all models, we could find all models AUC are in range from 0.7 to 0.8
 + Also Navie Bayes is not good model in term AUC, since it based on strong assumption that all features are independent which is unrealistic
