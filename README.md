@@ -74,7 +74,7 @@ Based on learning curves, RMSE and EVAR, I think **SGD** is the best model in th
 4. For each model output the *in- and out-of-sample confusion matrix, accuracy, precision, recall and F1-score*
     
 #### Results
-In the showing case, we could see that **linear SVM** is better performed than **rbf SVM** since the out sample *F1* of **linear SVM** is slightly higher than **rbf SVM**. I tried to change $random\_state$ parameter in $train\_test\_split$ and test results for different training test splits. My expectation is **rbf SVM** will perform better. However, I find that:
+In the showing case, we could see that **linear SVM** is better performed than **rbf SVM** since the out sample *F1* of **linear SVM** is slightly higher than **rbf SVM**. I tried to change *random_state* parameter in *train_test_split* and test results for different training test splits. My expectation is **rbf SVM** will perform better. However, I find that:
 + For in sample set, **rbf SVM** will always perform better than **linear SVM**, since **rbf** could provide *nonlinear* classification which is more powerful. 
 + For out sample set, the performance of two SVMs will vary based on the different train-test splits.  Sometimes **rbf** is better, while sometimes **linear** is better. 
 + I think the reason is **rbf** is susceptible to *overfitting/training* issues  and also the dataset size is too small and therefore, the training set difference will affect the model performance. Sometimes, poor training set will cause **rbf** overfitting and having large bais. Thus, **rbf SVM** may perform poorer than **linear SVM** on out sample set. 
@@ -134,6 +134,38 @@ kurtosis: 3.1479565058733145
 
 
 ---------------------------
+## mid-term project: credit risk prediction using classification models
+
+#### Dataset
+`German Credit` dataset available at [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Statlog+%28German+Credit+Data%29). There are 13 qualitative and 7 numerical attributes. Each attribute has a descriptive name. The meaning of each code is listed in the `metadata` file.
+
+#### Models 
+Propose an optimal classification model that forecasts credit risk (good/bad credit outcome) given the above attributes.
+
+#### ROC curves comparsion 
+
+
++ Compare AUC for all models, we could find all models AUC are in range from 0.7 to 0.8
++ Also Navie Bayes is not good model in term AUC, since it based on strong assumption that all features are independent which is unrealistic
++ It is unexpected that neural network obtains low  AUC. The reason is that it has the overfitting problem, and more parameter tuning needs to be done. 
++ AdaBoost and rbf SVM achieve the best performance in terms of AUC
+
+#### Metrics comparsion
+
+| | LR | NB | DT | RF | AdaBoost | rbf-SVM | NN |
+| --- | --- | --- | --- | --- | --- | --- | --- |  
+| accuracy  | 0.736 | 0.676 | 0.728 | 0.728 | 0.760 | 0.696 | 0.724 |
+| precison | 0.802 | 0.823 | 0.803 | 0.739 | 0.799 | 0.862 | 0.792 |
+| recall | 0.830 | 0.688 | 0.812 | 0.949 | 0.881 | 0.676 | 0.824 |
+| F1 | 0.816 | 0.749 | 0.808 | 0.831 | 0.838 | 0.758 | 0.808 |
+| cv score mean | 0.825 | 0.737 | 0.802 | 0.828 | 0.823 | 0.765 | 0.813 |
+| cv score std | 0.034 | 0.162 | 0.025 | 0.011 | 0.021 | 0.057 | 0.042 |
+
+#### Summary 
++ Based on all the tests above, since *F1 score* is wighted averge for *precison* and *recall*, which is more comprehensive and cross validation based on *F1* score is more objective to evaluate the model performance, I would choose **random forest** *(criterion = 'entropy',  n_estimators=20, max_depth=6)* as my optimal model for our credit risk prediction problem, since **random forest** is one excellent classification model to deal with overfitting problem if we carefully choose parameters such as *tree_depth*. 
++ More work could be done to improve our model performance to detect the potential bad credit, such as using grid search to choose parameters more carefully, and dealing with the imbalanced dataset problem. 
+
+--------------------------------------------
 ## homework 5: daily return prediction using LSTM 
 
 #### Dataset
