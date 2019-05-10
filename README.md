@@ -145,10 +145,10 @@ Propose an optimal classification model that forecasts credit risk (good/bad cre
 #### ROC curves comparsion 
 <img src="https://github.com/bondxue/FRE7773-Machine-Learning-in-Finance/blob/master/MidTerm-CreditRiskProject/images/roc.PNG" width="800">
 
-+ Compare AUC for all models, we could find all models AUC are in range from 0.7 to 0.8
-+ Also Navie Bayes is not good model in term AUC, since it based on strong assumption that all features are independent which is unrealistic
-+ It is unexpected that neural network obtains low  AUC. The reason is that it has the overfitting problem, and more parameter tuning needs to be done. 
-+ AdaBoost and rbf SVM achieve the best performance in terms of AUC
++ Compare *AUC* for all models, we could find all models *AUC* are in range from 0.7 to 0.8.
++ Also **Navie Bayes** is not good model in term *AUC*, since it based on strong assumption that all features are independent which is unrealistic.
++ It is unexpected that **neural network** obtains low  *AUC*. The reason is that it has the overfitting problem, and more parameter tuning needs to be done. 
++ **AdaBoost** and **rbf SVM** achieve the best performance in terms of *AUC*.
 
 #### Metrics comparsion
 
