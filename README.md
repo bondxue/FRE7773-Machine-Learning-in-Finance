@@ -169,3 +169,9 @@ Based on *RMSE* and *correlation* between acutal and predicted n-day returns  an
 1. Daily return has **martingale** property, we cannot predict daily returns just based on the previous daily return data. 
 2. If we want to improve the prediction performance, instead of using just previous daily return data, more features needed to be considered, such as `volume`.
 3. Even with enough data and good feature selection, we still cannot expect much better performace. As we could see from the real daily return plots, daily return does not have obvious trends and it is extremly unstable with sudden nonlinear changes. However, LSTM only based on the previous information, for which I doubt it could capture the super nonlinear trends. 
+
+---------------------------------------
+## final project: intraday ETF trading 
+
+**(updating soon...)**
+
