@@ -143,12 +143,12 @@ kurtosis: 3.1479565058733145
 Propose an optimal classification model that forecasts credit risk (good/bad credit outcome) given the above attributes.
 
 #### ROC curves comparsion 
+<img src="https://github.com/bondxue/FRE7773-Machine-Learning-in-Finance/blob/master/MidTerm-CreditRiskProject/images/roc.PNG" width="800">
 
-
-+ Compare AUC for all models, we could find all models AUC are in range from 0.7 to 0.8
-+ Also Navie Bayes is not good model in term AUC, since it based on strong assumption that all features are independent which is unrealistic
-+ It is unexpected that neural network obtains low  AUC. The reason is that it has the overfitting problem, and more parameter tuning needs to be done. 
-+ AdaBoost and rbf SVM achieve the best performance in terms of AUC
++ Compare *AUC* for all models, we could find all models *AUC* are in range from 0.7 to 0.8.
++ Also **Navie Bayes** is not good model in term *AUC*, since it based on strong assumption that all features are independent which is unrealistic.
++ It is unexpected that **neural network** obtains low  *AUC*. The reason is that it has the overfitting problem, and more parameter tuning needs to be done. 
++ **AdaBoost** and **rbf SVM** achieve the best performance in terms of *AUC*.
 
 #### Metrics comparsion
 
@@ -197,10 +197,10 @@ Propose an optimal classification model that forecasts credit risk (good/bad cre
 
 
 #### Summary
-Based on *RMSE* and *correlation* between acutal and predicted n-day returns  and plots of out-of-sample parts, we can conclude that LSTM model does not have good performance in predicting daily returns. The potential reseaons are:
+Based on *RMSE* and *correlation* between acutal and predicted n-day returns  and plots of out-of-sample parts, we can conclude that **LSTM** model does not have good performance in predicting daily returns. The potential reseaons are:
 1. Daily return has **martingale** property, we cannot predict daily returns just based on the previous daily return data. 
 2. If we want to improve the prediction performance, instead of using just previous daily return data, more features needed to be considered, such as `volume`.
-3. Even with enough data and good feature selection, we still cannot expect much better performace. As we could see from the real daily return plots, daily return does not have obvious trends and it is extremly unstable with sudden nonlinear changes. However, LSTM only based on the previous information, for which I doubt it could capture the super nonlinear trends. 
+3. Even with enough data and good feature selection, we still cannot expect much better performace. As we could see from the real daily return plots, daily return does not have obvious trends and it is extremly unstable with sudden nonlinear changes. However, **LSTM** only based on the previous information, for which I doubt it could capture the super nonlinear trends. 
 
 ---------------------------------------
 ## final project: intraday ETF trading 
