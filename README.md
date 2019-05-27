@@ -222,4 +222,28 @@ A row reports trading activity within the time period that ends at the correspon
 | lastBidPx/lastAskPx | Last bid and ask price in the interval |
 | lastBidSz/lastAskSz | Last bid and ask sizes (in hundreds of shares) in the interval |
 
+#### Feature Engineering
+
+Derived quantities of interest are
+
+* The Close Location Value (CLV) indicator. This is an intraday adaptation of a classic technical indicator. It is defined as
+   <img src="http://latex.codecogs.com/gif.latex?CLV_t = \frac{VWAP_t - (lowPx_t + highPx_t)/2}{(highPx_t - lowPx_t)/2}" border="0"/>
+   It measures the location of the VWAP within interval *t*, relative to the mid-point price between low and high price.  
+
+* The last *quote imbalance* of interval *t*, defined as 
+
+   <img src="http://latex.codecogs.com/gif.latex?Imbal_t = \frac{lastBidSz_t - lastAskSz_t}{lastBidSz_t + lastAskSz_t}" border="0"/>
+   
+   By construction *-1 <= Imbal <= 1*.
+
+   When *Imbal -> 1*, there is much more interest to buy than to sell. Conversely, when *Imbal -> -1* there is much more interest to sell than to buy.  
+
+* The log-transformed volume defined as *logVolume = log10(Volume)* 
+   When working with volume-like quantities (non-negative) taking logs is a common normalization.  
+   Either base 10 or natural logs can be used, base 10 logs may be easier to interpret.
+
+   We are also interested in the $N$-period forward return in basis points
+
+   <img src="http://latex.codecogs.com/gif.latex?\mathrm{fwdRetNBps}_t = 10000 * \left(\frac{VWAP_{t+N}}{VWAP_t} - 1\right)" border="0"/>
+
 
