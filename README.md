@@ -228,6 +228,7 @@ Derived quantities of interest are
 
 * The Close Location Value (CLV) indicator. This is an intraday adaptation of a classic technical indicator. It is defined as
    <img src="http://latex.codecogs.com/gif.latex?CLV_t = \frac{VWAP_t - (lowPx_t + highPx_t)/2}{(highPx_t - lowPx_t)/2}" border="0"/>
+   
    It measures the location of the VWAP within interval *t*, relative to the mid-point price between low and high price.  
 
 * The last *quote imbalance* of interval *t*, defined as 
@@ -246,4 +247,24 @@ Derived quantities of interest are
 
    <img src="http://latex.codecogs.com/gif.latex?\mathrm{fwdRetNBps}_t = 10000 * \left(\frac{VWAP_{t+N}}{VWAP_t} - 1\right)" border="0"/>
 
+#### Model Performance Comparsion 
+Construction of a baseline model, to be used as a reference.
+The baseline model predicts the price direction class  *𝐶={−1,0,1}*  randomly using the class empirical probability of occurence.
+
+<img src="http://latex.codecogs.com/gif.latex?\mathbb{P}(C=\pm 1) = \frac{N_{train}(C=\pm 1)}{N_{train}}\quad" border="0"/>, <img src="http://latex.codecogs.com/gif.latex?\mathbb{P}(C=0) = \frac{N_{train}(C=0)}{N_{train}}" border="0"/>
+
+Estimate the empirical probabilities of the baseline model using the training set.  
+
+
+| Model | Accuracy | Precision | Recall | F1wght | F1micro |
+| --- | --- | --- | --- | --- | --- | 
+| Baseline  | 0.445109| 0.319603 | 0.445109 | 0.368730 | 0.445109 |
+| DNN | 0.499466 | 0.410744 | 0.499466 | 0.339245 | 0.499466 |
+| Logistic Regression | 0.498825 | 0.451944 | 0.498825 | 0.334430	| 0.498825 |
+| Random Forest | 0.498505 | 0.508893 | 0.498505 | 0.331792	| 0.498505 |
+| AdaBoost | 0.498932 | 0.411672	| 0.498932	| 0.337461	| 0.498932 |
+
++ We can see that in terms of *accuracy*, *precision*, *recall*, *F1micro*, all models I choose will be outperformed compared with the **baseline** model. However, when we consider *F1wght*, none of our models will beat the **baseline** model. The potential reason is that *F1wght* will account for class occurence and potential dataset imbalance, it favours the majority class. And our **baseline** model is based on the empircal probability of occurence, thus also favours the majority class. Therefore, **baseline** model should have good performance in terms of *F1wght*.
++ When we compare among different models, we can find that in terms of *accuracy*, *recall* and *F1micro*, all four models are similar, but in term of *precision*, my **random forest**(*criterion = 'entropy',  n_estimators=20, max_depth=6, random_state = 0*) will outpeform the other models. Thus, I would say **random forest** is the optimal model in my case study.
++ One potential improvement in my model selection is that since we are dealing with time series data which may have potential correlation among the time sequences. Thus **RNN** or **LSTM** model might be better models when dealing with time series dataset to reveal the potential time correlation among data.
 
