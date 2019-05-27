@@ -268,3 +268,15 @@ Estimate the empirical probabilities of the baseline model using the training se
 + When we compare among different models, we can find that in terms of *accuracy*, *recall* and *F1micro*, all four models are similar, but in term of *precision*, my **random forest**(*criterion = 'entropy',  n_estimators=20, max_depth=6, random_state = 0*) will outpeform the other models. Thus, I would say **random forest** is the optimal model in my case study.
 + One potential improvement in my model selection is that since we are dealing with time series data which may have potential correlation among the time sequences. Thus **RNN** or **LSTM** model might be better models when dealing with time series dataset to reveal the potential time correlation among data.
 
+#### Extra Improvement 
+I Attempt to improve model performance by introducing one extra feature variable **Rolling Mean of vwap** feature.
+
+| Model | Accuracy | Precision | Recall | F1wght | F1micro |
+| --- | --- | --- | --- | --- | --- | 
+| DNN  | 0.499840 | 0.391648 | 0.499840 | 0.375813	| 0.499840 |
+| Logistic Regression | 0.500801	| 0.432809 | 0.500801 | 0.350791	| 0.500801 |
+
++ I tried two models **LR** and **DNN** to test my new feature **rolling_vwap**, which is the moving average of **vwap** in the past 10 period. I do find that for both models expecially for **F1wght** score. I would say that because of the inherent serial correlation and potential non-stationary of the time series dataset, **rolling_vwap** maybe a good feature in terms of capturing the inherent serial correlation among 10sec data. 
++ However, I would say there is not guarantee **vwap** will be good feature for all the other models, since different model may have different good feature standards. 
+
+
