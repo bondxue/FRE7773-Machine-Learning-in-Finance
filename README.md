@@ -205,5 +205,21 @@ Based on *RMSE* and *correlation* between acutal and predicted n-day returns  an
 ---------------------------------------
 ## final project: intraday ETF trading 
 
-**(updating soon...)**
+#### Dataset 
+*SPY* is an Exchange Traded Fund (ETF) that replicates the S&P 500 index, and trades in exchanges like ordinary equity.
+*SPY* is the most liquid (heavily traded) equity asset in the US.
+
+For all trading days in June 2018 we have aggregated in 10-sec intervals the trading activity in SPY across all exchanges.
+The dataset is provided in the file `spy-10sec-201806.csv`.
+Each row corresponds to a specific 10-sec interval for the corresponding trading day.
+A row reports trading activity within the time period that ends at the corresponding interval.
+
+| Column | Description |
+| --- | --- |
+| volume  | Number of shares traded within the interval |
+| 	vwap | Volume Weighted Average Price |
+| lowPx/highPx | 	Lowest and highest trade prices within the interval |
+| lastBidPx/lastAskPx | Last bid and ask price in the interval |
+| lastBidSz/lastAskSz | Last bid and ask sizes (in hundreds of shares) in the interval |
+
 
