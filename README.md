@@ -277,6 +277,6 @@ I Attempt to improve model performance by introducing one extra feature variable
 | Logistic Regression | 0.500801	| 0.432809 | 0.500801 | 0.350791	| 0.500801 |
 
 + I tried two models **LR** and **DNN** to test my new feature **rolling_vwap**, which is the moving average of **vwap** in the past 10 period. I do find that for both models expecially for **F1wght** score. I would say that because of the inherent serial correlation and potential non-stationary of the time series dataset, **rolling_vwap** maybe a good feature in terms of capturing the inherent serial correlation among 10sec data. 
-+ However, I would say there is not guarantee **vwap** will be good feature for all the other models, since different model may have different good feature standards. 
++ However, I would say there is not guarantee **vwap** will be good feature for all the other models, since different models may have different good feature standards. 
 
 
